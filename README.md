@@ -2,200 +2,11 @@
 
 **Enterprise-grade machine learning application for predicting English Premier League match outcomes, final scores, win/draw/loss probabilities, expected goals, and team statistics using historical match data, ELO ratings, and multiple machine learning models through an interactive Streamlit interface.**
 
-EPL MatchVision leverages decades of English Premier League historical data to generate intelligent football predictions. By combining feature engineering, dynamic ELO ratings, historical team performance, and multiple machine learning algorithms, the application predicts match winners, expected goals, final scorelines, and win/draw/loss probabilities. Alongside predictions, users can explore detailed club histories, Premier League information, model performances, and historical datasets through a modern Streamlit web application.
+### 🔴 Live Demo
 
-Machine learning powered predictions &nbsp;·&nbsp; Multi-model comparison &nbsp;·&nbsp; ELO rating integration &nbsp;·&nbsp; Win/Draw/Loss probabilities &nbsp;·&nbsp; Final score prediction &nbsp;·&nbsp; Interactive Streamlit dashboard
+**[https://epl-prediction-yxf5.onrender.com/](https://epl-prediction-yxf5.onrender.com/)**
 
----
-
-# Features
-
-## Match Outcome Prediction
-- Predicts the final outcome as **Home Win**, **Draw**, or **Away Win**
-- Supports multiple machine learning models for prediction
-- Generates confidence-based predictions using historical match statistics
-- Allows users to compare predictions across different models
-
-## Final Score Prediction
-- Predicts the expected number of goals scored by both teams
-- Uses dedicated regression models for Home Goals and Away Goals
-- Displays the projected final scoreline
-- Provides realistic score estimates using historical team performances
-
-## Win / Draw / Loss Probability Estimation
-- Calculates probabilities for every possible match outcome
-- Displays prediction confidence through probability distributions
-- Helps users interpret model certainty instead of relying on a single prediction
-- Supports better analytical decision-making
-
-## ELO Rating Integration
-- Incorporates dynamic ELO ratings into prediction models
-- Measures relative team strength based on historical performances
-- Improves prediction accuracy by considering long-term consistency
-- Dedicated page explaining ELO ratings and team rankings
-
-## Historical Team Statistics
-- Retrieves historical performance statistics for every club
-- Displays team strengths before prediction
-- Uses engineered historical features during model inference
-- Supports comparative analysis between competing teams
-
-## About Premier League & Clubs
-- Brief history of the English Premier League
-- League structure and competition format
-- Trophy history and major milestones
-- Information about all clubs present in the dataset
-- Club foundation details, historical achievements, legendary players, and current status
-
-## Dataset Explorer
-- Interactive viewer for the complete historical dataset
-- Allows users to inspect the data used during model training
-- Displays historical match records in tabular format
-- Enhances transparency of the prediction pipeline
-
-## Model Performance Dashboard
-- Displays classification accuracy of every prediction model
-- Shows Mean Absolute Error (MAE) for Home Goal and Away Goal regressors
-- Enables easy comparison between different machine learning models
-- Helps users understand the strengths of each approach
-
-## Multiple Machine Learning Models
-- Random Forest Classifier
-- Random Forest with ELO features
-- XGBoost Classifier
-- Neural Network Classifier
-- Dedicated regression models for Home Goals and Away Goals
-
-## Interactive Streamlit Interface
-- Clean and responsive user interface
-- Multi-page navigation
-- Team logos integrated throughout the application
-- Modern layout with intuitive workflow
-- Easy-to-use prediction forms
-
----
-
-# Application Preview
-
-> **Replace the following placeholders with screenshots after uploading them to GitHub.**
-
-## Home Page
-
-```text
-[ Home Page Screenshot ]
-```
-
-## Match Prediction
-
-```text
-[ Match Prediction Screenshot ]
-```
-
-## Final Score Prediction
-
-```text
-[ Final Score Prediction Screenshot ]
-```
-
-## Win / Draw / Loss Probabilities
-
-```text
-[ Probability Prediction Screenshot ]
-```
-
-## Team ELO Ratings
-
-```text
-[ ELO Ratings Screenshot ]
-```
-
-## About EPL & Teams
-
-```text
-[ About EPL Screenshot ]
-```
-
-## Dataset Explorer
-
-```text
-[ Dataset Screenshot ]
-```
-
-## Model Performance
-
-```text
-[ Model Accuracy Screenshot ]
-```
-
----
-
-# How It Works
-
-## Prediction Workflow
-
-```text
-                 Historical EPL Dataset
-                          │
-                          ▼
-            Data Cleaning & Preprocessing
-                          │
-                          ▼
-                Feature Engineering
-                          │
-        ┌─────────────────┴─────────────────┐
-        ▼                                   ▼
-Historical Team Statistics           Dynamic ELO Ratings
-        │                                   │
-        └─────────────────┬─────────────────┘
-                          ▼
-               Prediction Feature Vector
-                          │
-        ┌─────────────────┼──────────────────┐
-        ▼                 ▼                  ▼
- Random Forest        XGBoost         Neural Network
- Classifier           Classifier        Classifier
-        │                 │                  │
-        └─────────────────┼──────────────────┘
-                          ▼
-              Match Outcome Prediction
-                          │
-                          ▼
-             Goal Regression Models
-      (Home Goals & Away Goals Prediction)
-                          │
-                          ▼
-     Win Probability • Draw Probability • Away Probability
-                          │
-                          ▼
-             Final Score & Match Statistics
-                          │
-                          ▼
-              Interactive Streamlit Interface
-```
-
-### Step-by-Step Process
-
-1. The user selects the **Home Team** and **Away Team** from the prediction interface.
-
-2. Historical statistics of both clubs are retrieved from the preprocessed dataset.
-
-3. Latest ELO ratings are incorporated into the feature vector.
-
-4. Feature engineering generates the complete input required by the machine learning models.
-
-5. The selected classification model predicts the match outcome as **Home Win**, **Draw**, or **Away Win**.
-
-6. Dedicated regression models estimate the expected Home Goals and Away Goals independently.
-
-7. The system computes win, draw, and loss probabilities based on model outputs.
-
-8. Results are displayed through the Streamlit interface along with the predicted scoreline, probabilities, model information, and supporting statistics.
-
----
-
-# EPL MatchVision — AI-Powered English Premier League Match Prediction System
-
-**Enterprise-grade machine learning application for predicting English Premier League match outcomes, final scores, win/draw/loss probabilities, expected goals, and team statistics using historical match data, ELO ratings, and multiple machine learning models through an interactive Streamlit interface.**
+> Hosted on Render's free tier — the app may take **30–60 seconds** to wake up on first load if it has been idle. Subsequent navigation will be fast.
 
 EPL MatchVision leverages decades of English Premier League historical data to generate intelligent football predictions. By combining feature engineering, dynamic ELO ratings, historical team performance, and multiple machine learning algorithms, the application predicts match winners, expected goals, final scorelines, and win/draw/loss probabilities. Alongside predictions, users can explore detailed club histories, Premier League information, model performances, and historical datasets through a modern Streamlit web application.
 
@@ -272,55 +83,29 @@ Machine learning powered predictions &nbsp;·&nbsp; Multi-model comparison &nbsp
 
 # Application Preview
 
-> **Replace the following placeholders with screenshots after uploading them to GitHub.**
-
 ## Home Page
-
-```text
-<img width="1912" height="785" alt="image" src="https://github.com/user-attachments/assets/aba90166-f7a2-4ac5-b731-6b9399347868" />
-```
+<img width="1912" height="785" alt="Home Page" src="https://github.com/user-attachments/assets/aba90166-f7a2-4ac5-b731-6b9399347868" />
 
 ## Match Prediction
-
-```text
-<img width="1907" height="787" alt="image" src="https://github.com/user-attachments/assets/06daeb83-6d6f-4bef-a5e6-83d3784d062b" />
-```
+<img width="1907" height="787" alt="Match Prediction" src="https://github.com/user-attachments/assets/06daeb83-6d6f-4bef-a5e6-83d3784d062b" />
 
 ## Final Score Prediction
-
-```text
-<img width="1915" height="818" alt="Screenshot 2026-07-13 232251" src="https://github.com/user-attachments/assets/279d4753-10b7-4546-abe9-8621d77acf05" />
-```
+<img width="1915" height="818" alt="Final Score Prediction" src="https://github.com/user-attachments/assets/279d4753-10b7-4546-abe9-8621d77acf05" />
 
 ## Win / Draw / Loss Probabilities
-
-```text
-<img width="1918" height="767" alt="image" src="https://github.com/user-attachments/assets/00cedc2c-290d-487b-9ec8-7364afadfc48" />
-```
+<img width="1918" height="767" alt="Win Draw Loss Probabilities" src="https://github.com/user-attachments/assets/00cedc2c-290d-487b-9ec8-7364afadfc48" />
 
 ## Team ELO Ratings
-
-```text
-<img width="1907" height="803" alt="Screenshot 2026-07-13 232400" src="https://github.com/user-attachments/assets/52448d61-6213-432e-8e8b-bd789acb030b" />
-```
+<img width="1907" height="803" alt="Team ELO Ratings" src="https://github.com/user-attachments/assets/52448d61-6213-432e-8e8b-bd789acb030b" />
 
 ## About EPL & Teams
-
-```text
-<img width="1903" height="810" alt="Screenshot 2026-07-13 232516" src="https://github.com/user-attachments/assets/8eaa491e-b799-4550-b399-6dd0e81b088f" />
-```
+<img width="1903" height="810" alt="About EPL and Teams" src="https://github.com/user-attachments/assets/8eaa491e-b799-4550-b399-6dd0e81b088f" />
 
 ## Dataset Explorer
-
-```text
-<img width="1905" height="807" alt="Screenshot 2026-07-13 232542" src="https://github.com/user-attachments/assets/4bfcdf6c-28b1-4b2a-aab9-725d6da35a10" />
-```
+<img width="1905" height="807" alt="Dataset Explorer" src="https://github.com/user-attachments/assets/4bfcdf6c-28b1-4b2a-aab9-725d6da35a10" />
 
 ## Model Performance
-
-```text
-<img width="1911" height="807" alt="Screenshot 2026-07-13 232428" src="https://github.com/user-attachments/assets/d7bb9973-1801-4741-9bc3-995fb2c1fa86" />
-```
+<img width="1911" height="807" alt="Model Performance" src="https://github.com/user-attachments/assets/d7bb9973-1801-4741-9bc3-995fb2c1fa86" />
 
 ---
 
@@ -371,19 +156,12 @@ Historical Team Statistics           Dynamic ELO Ratings
 ### Step-by-Step Process
 
 1. The user selects the **Home Team** and **Away Team** from the prediction interface.
-
 2. Historical statistics of both clubs are retrieved from the preprocessed dataset.
-
 3. Latest ELO ratings are incorporated into the feature vector.
-
 4. Feature engineering generates the complete input required by the machine learning models.
-
 5. The selected classification model predicts the match outcome as **Home Win**, **Draw**, or **Away Win**.
-
 6. Dedicated regression models estimate the expected Home Goals and Away Goals independently.
-
 7. The system computes win, draw, and loss probabilities based on model outputs.
-
 8. Results are displayed through the Streamlit interface along with the predicted scoreline, probabilities, model information, and supporting statistics.
 
 ---
@@ -394,8 +172,6 @@ The project evaluates every machine learning model using both **classification**
 
 Classification models are evaluated based on their ability to correctly predict the match outcome, while regression models are assessed on how accurately they estimate the number of goals scored by each team.
 
----
-
 ## Classification Evaluation
 
 The following metric is used for match outcome prediction.
@@ -405,8 +181,6 @@ The following metric is used for match outcome prediction.
 | Accuracy Score | Percentage of correctly predicted Home Win, Draw, and Away Win outcomes |
 
 Higher accuracy indicates better overall classification performance.
-
----
 
 ## Regression Evaluation
 
@@ -420,8 +194,6 @@ Each regression model is evaluated using Mean Absolute Error (MAE).
 | Away Goal MAE | Average prediction error for away team goals |
 
 A lower MAE indicates more accurate goal prediction.
-
----
 
 ## Model Comparison
 
@@ -440,7 +212,7 @@ This allows users to understand the trade-offs between different machine learnin
 
 # Streamlit Application
 
-The project is deployed as a multi-page Streamlit application that enables users to interact with the prediction models without requiring any programming knowledge.
+The project is a multi-page Streamlit application that enables users to interact with the prediction models without requiring any programming knowledge. It is deployed and publicly accessible on **Render**.
 
 ## Application Modules
 
@@ -495,60 +267,55 @@ Display Prediction Results
 # Technologies Used
 
 ## Programming Languages
-
 - Python
 
----
-
 ## Machine Learning
-
 - Scikit-learn
 - XGBoost
 - Multi-layer Perceptron (MLP)
 - Joblib
 
----
-
 ## Data Processing
-
 - Pandas
 - NumPy
 
----
-
 ## Data Visualisation
-
 - Matplotlib
 - Plotly
 
----
-
 ## Web Framework
-
 - Streamlit
 
----
+## Deployment
+- Render
 
 ## Development Environment
-
 - Visual Studio Code
 - Jupyter Notebook
 
 ---
 
-# Installation
+# Getting Started
 
-## Requirements
+## Option 1 — Use the Live App (Recommended)
 
-Before running the application, ensure the following software is installed.
+No installation required. Simply open the deployed application:
+
+**[https://epl-prediction-yxf5.onrender.com/](https://epl-prediction-yxf5.onrender.com/)**
+
+> Note: Render's free-tier instances spin down after periods of inactivity. If the app appears blank or slow on first visit, wait 30–60 seconds and refresh.
+
+## Option 2 — Run Locally
+
+### Requirements
+
+Before running the application locally, ensure the following software is installed.
 
 - Python 3.10 or later
 - pip
 - Git
 
----
-
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/SAYAR123/EPL_Prediction.git
@@ -556,29 +323,25 @@ git clone https://github.com/SAYAR123/EPL_Prediction.git
 cd EPL_Prediction
 ```
 
----
-
-## Install Dependencies
+### Install Dependencies
 
 ```bash
-pip install -r req_user.txt
+pip install -r req.txt
 ```
 
----
-
-## Run the Application
+### Run the Application
 
 ```bash
 streamlit run frontend/app.py
 ```
 
-The Streamlit application will launch in your default web browser.
+The Streamlit application will launch in your default web browser at `http://localhost:8501`.
 
 ---
 
 # Usage
 
-1. Launch the Streamlit application.
+1. Open the [live application](https://epl-prediction-yxf5.onrender.com/) or launch it locally.
 2. Navigate to the **Match Prediction** page.
 3. Select the preferred machine learning model.
 4. Choose the Home Team.
@@ -632,6 +395,7 @@ This project can be applied in several domains of sports analytics and machine l
 - Separate training and inference workflow
 - User-friendly prediction dashboard
 - Comprehensive Premier League information pages
+- Live public deployment on Render
 
 ---
 
@@ -663,7 +427,6 @@ The project can be further enhanced by incorporating more advanced machine learn
 - Season-wise filtering options
 - Match history timeline
 - Responsive mobile interface
-- Dark mode support
 
 ### Explainable AI
 - SHAP-based feature importance visualisation
@@ -672,8 +435,8 @@ The project can be further enhanced by incorporating more advanced machine learn
 - Comparison of feature contributions across different models
 
 ### Deployment
+- Custom domain and paid Render tier to eliminate cold-start delays
 - Docker containerisation
-- Cloud deployment on AWS, Azure, or Google Cloud
 - CI/CD pipeline using GitHub Actions
 - REST API for prediction services
 - Authentication and user profile support
@@ -688,7 +451,7 @@ Future versions may include several optimisations to improve scalability and res
 - Lazy loading of machine learning models
 - Parallel prediction pipeline
 - Efficient memory management
-- Reduced application startup time
+- Reduced application startup and cold-start time on Render
 - Optimised feature computation
 - GPU-accelerated model inference where applicable
 
@@ -719,6 +482,7 @@ This project demonstrates practical implementation of several data science and s
 - Object serialization using Joblib
 - Interactive dashboard development
 - User interface design
+- Cloud deployment on Render
 
 ## Football Analytics
 - ELO rating systems
@@ -737,6 +501,7 @@ This project demonstrates practical implementation of several data science and s
 - Incorporates dynamic ELO ratings to improve predictive performance.
 - Utilises historical team statistics and engineered features.
 - Interactive multi-page Streamlit web application.
+- Publicly deployed and accessible via Render.
 - Includes comprehensive information about the Premier League and participating clubs.
 - Supports comparison between different machine learning models.
 - Displays model evaluation metrics for both classification and regression.
@@ -766,8 +531,6 @@ Special thanks to:
 Computer Science Engineering Student
 
 GitHub: https://github.com/SAYAR123
-
----
 
 ## Co-Developer
 
@@ -823,17 +586,17 @@ Please ensure that:
 
 For suggestions, collaborations, or feedback, feel free to connect through GitHub.
 
-Repository:
+**Live App:** https://epl-prediction-yxf5.onrender.com/
 
-https://github.com/SAYAR123/EPL_Prediction
+**Repository:** https://github.com/SAYAR123/EPL_Prediction
 
-Developer Profiles:
+**Developer Profiles:**
 
-https://github.com/SawmikPal
-https://github.com/GoldenHeart2000
-https://github.com/SAYAR123
-https://github.com/PRAMITI-GHOSH
-https://github.com/Rony0387 
+- https://github.com/SawmikPal
+- https://github.com/GoldenHeart2000
+- https://github.com/SAYAR123
+- https://github.com/PRAMITI-GHOSH
+- https://github.com/Rony0387
 
 ---
 
@@ -844,8 +607,8 @@ If you find this project useful in your work or research, please consider citing
 ```text
 Sawmik Pal, Sarthak Mukherjee, Sayar Sekhar Ghosh, Pramiti Ghosh, Soumik Mandal
 EPL MatchVision: AI-Powered English Premier League Match Prediction System.
-GitHub Repository:
-https://github.com/SAYAR123/EPL_Prediction
+GitHub Repository: https://github.com/SAYAR123/EPL_Prediction
+Live Demo: https://epl-prediction-yxf5.onrender.com/
 ```
 
 ---
@@ -863,6 +626,7 @@ https://github.com/SAYAR123/EPL_Prediction
 | Outcome Prediction | Home Win / Draw / Away Win |
 | Goal Prediction | Home Goals & Away Goals |
 | Probability Prediction | Win / Draw / Loss |
+| Deployment | Render |
 | Additional Features | ELO Ratings, Team Statistics, Club Information |
 
 ---
