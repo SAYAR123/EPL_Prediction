@@ -1,0 +1,14 @@
+ipynb
+ipykernel
+
+joblib
+
+numpy
+pandas
+
+matplotlib
+
+scikit-learn
+xgboost
+
+streamlit

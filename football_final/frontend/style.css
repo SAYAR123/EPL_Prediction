@@ -1,0 +1,413 @@
+/* ===================================================================
+   EPL MATCHVISION — "UNDER THE FLOODLIGHTS" THEME
+   A night-match broadcast aesthetic: deep pitch black-green base,
+   a faint pitch-marking watermark, floodlight glow vignettes,
+   and scoreboard-style condensed type for numbers and headlines.
+=================================================================== */
+
+/* ================================
+        IMPORT FONTS
+   Oswald   -> condensed scoreboard/kit-number display face
+   Inter    -> clean body copy
+   JetBrains Mono -> stats, odds, data tables
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --pitch-black:   #060f09;
+    --pitch-green:   #114d2e;
+    --turf:          #17703f;
+    --turf-bright:   #1f9950;
+    --floodlight:    #f4f7f2;
+    --chalk:         #d7e3da;
+    --gold:          #e0b23a;
+    --gold-bright:   #ffd75e;
+    --tv-blue:       #3fd0ff;
+    --danger-red:    #ef4444;
+    --card-bg:       rgba(12, 32, 21, 0.82);
+    --border-soft:   rgba(224, 178, 58, 0.25);
+}
+
+/* ================================
+        BASE TYPOGRAPHY & BACKGROUND
+================================ */
+html, body, [class*="css"], .stMarkdown, .stApp {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--chalk);
+}
+
+code, pre, [data-testid="stCodeBlock"] {
+    font-family: "JetBrains Mono", monospace !important;
+}
+
+/* ================================
+        PITCH BACKGROUND
+   Base gradient (floodlit night pitch) + a faint SVG watermark of
+   a football pitch's centre circle & halfway line, fixed in the
+   corner like a broadcast graphic, plus subtle mown-turf stripes.
+================================ */
+.stApp {
+    background-color: var(--pitch-green) !important;
+    background-image:
+        /* faint pitch markings watermark, bottom-right */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' viewBox='0 0 900 900'%3E%3Cg fill='none' stroke='%23f4f7f2' stroke-width='2' opacity='0.09'%3E%3Ccircle cx='450' cy='450' r='230'/%3E%3Ccircle cx='450' cy='450' r='6' fill='%23f4f7f2'/%3E%3Cline x1='0' y1='450' x2='900' y2='450'/%3E%3Cpath d='M0 150 h180 v600 h-180 z'/%3E%3Cpath d='M0 300 h70 v300 h-70 z'/%3E%3C/g%3E%3C/svg%3E"),
+        /* mown-turf stripes, brighter and more visible */
+        repeating-linear-gradient(
+            115deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            rgba(255, 255, 255, 0.05) 40px,
+            rgba(0, 0, 0, 0.05) 40px,
+            rgba(0, 0, 0, 0.05) 80px
+        ),
+        /* floodlight glow, top corners, stronger and more saturated */
+        radial-gradient(ellipse 1000px 650px at 10% -5%, rgba(63, 208, 255, 0.28), transparent 62%),
+        radial-gradient(ellipse 1000px 650px at 92% 0%, rgba(255, 215, 94, 0.24), transparent 62%),
+        radial-gradient(ellipse 1200px 800px at 50% 100%, rgba(31, 153, 80, 0.35), transparent 65%),
+        /* vibrant pitch-green vertical gradient instead of fading to flat black */
+        linear-gradient(180deg, #1a6b3c 0%, var(--pitch-green) 40%, var(--pitch-black) 100%) !important;
+    background-repeat: no-repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: bottom right, center, top left, top right, bottom center, top;
+    background-size: 700px 700px, auto, auto, auto, auto, cover;
+    background-attachment: fixed, scroll, fixed, fixed, fixed, fixed;
+}
+
+/* Modern Header */
+header[data-testid="stHeader"] {
+    background: rgba(7, 11, 8, 0.88) !important;
+    border-bottom: 1px solid var(--border-soft) !important;
+    backdrop-filter: blur(12px);
+}
+
+/* ================================
+        HEADINGS — scoreboard voice
+================================ */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.3rem !important;
+    letter-spacing: 0.03em;
+    background: linear-gradient(90deg, var(--floodlight) 0%, var(--gold-bright) 55%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 2px;
+}
+
+h2 {
+    color: var(--tv-blue) !important;
+    font-weight: 600;
+    font-size: 1.55rem !important;
+    border-left: 3px solid var(--tv-blue);
+    padding-left: 10px;
+}
+
+h3 {
+    color: var(--gold-bright) !important;
+    font-weight: 500;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.06em;
+}
+
+/* Regular body text should NOT inherit the uppercase treatment */
+p, li, span, label, .stMarkdown p {
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+/* ================================
+        HERO BANNER — matchday graphic
+   Styled like a broadcast lower-third: deep navy card that pops
+   off the green pitch background, gold accent line, floodlight
+   glow, and a bold gold frame instead of a single soft border.
+================================ */
+.hero-card {
+    background:
+        radial-gradient(ellipse 500px 260px at 100% 0%, rgba(63, 208, 255, 0.16), transparent 65%),
+        linear-gradient(135deg, #16233a 0%, #0a1220 75%);
+    border: 1px solid rgba(224, 178, 58, 0.35);
+    border-left: 5px solid var(--gold);
+    border-radius: 16px; /* Increased from 6px to 16px for premium, modern rounded look */
+    padding: 30px 34px;
+    margin-bottom: 32px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65),
+                0 0 0 1px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden; /* Crucial: ensures child backgrounds and ::before straps respect the 16px curve */
+}
+
+/* top accent line, like a broadcast strap */
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-bright), var(--gold) 50%, transparent 85%);
+}
+
+/* centre-circle watermark inside the card, bottom right — brighter so it reads against navy */
+.hero-card::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(63, 208, 255, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-family: Calibri, 'Trebuchet MS', 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--floodlight);
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--chalk);
+    opacity: 0.85;
+    line-height: 1.6;
+    max-width: 85%;
+}
+
+/* ================================
+        SIDEBAR — tunnel wall
+================================ */
+[data-testid="stSidebar"] {
+    background:
+        radial-gradient(ellipse 400px 300px at 100% 0%, rgba(224, 178, 58, 0.16), transparent 65%),
+        linear-gradient(180deg, #0a0d10 0%, #03363a 100%) !important;
+    border-right: 2px solid var(--gold) !important;
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.55);
+}
+
+[data-testid="stSidebar"] * {
+    letter-spacing: 0.01em;
+}
+
+/* ================================
+        BUTTONS — jersey number treatment
+================================ */
+.stButton>button {
+    background: linear-gradient(90deg, #1f9950, #146633) !important;
+    color: var(--floodlight) !important;
+    border: 1px solid var(--gold) !important;
+    border-radius: 6px !important;
+    padding: 0.65rem 1.5rem !important;
+    font-family: 'Oswald', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold-bright) !important;
+    box-shadow: 0 8px 22px rgba(224, 178, 58, 0.32) !important;
+    background: linear-gradient(90deg, #26b45c, #1c7a3f) !important;
+}
+
+.stButton>button.secondary-btn {
+    background: transparent !important;
+    border: 1px solid #4b5f52 !important;
+    color: var(--chalk) !important;
+}
+
+/* ================================
+        INPUTS & SELECTS
+================================ */
+.stSelectbox>div>div, div[data-baseweb="select"], .stTextInput>div>div {
+    background: #0e1712 !important;
+    border: 1px solid #2a4133 !important;
+    border-radius: 6px !important;
+    color: var(--chalk) !important;
+    transition: all 0.2s ease;
+}
+
+.stSelectbox>div>div:hover, div[data-baseweb="select"]:hover {
+    border-color: var(--tv-blue) !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* ================================
+        METRICS — scoreboard digits
+================================ */
+[data-testid="metric-container"] {
+    background: linear-gradient(160deg, rgba(31, 153, 80, 0.28), rgba(7, 11, 8, 0.85)) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    backdrop-filter: blur(8px);
+}
+
+[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color: var(--gold-bright) !important;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    text-shadow: 0 0 18px rgba(242, 201, 76, 0.25);
+}
+
+[data-testid="metric-container"] [data-testid="stMetricLabel"] {
+    color: var(--chalk) !important;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem !important;
+    opacity: 0.85;
+}
+
+/* Progress bars used for win/draw/loss probability -> pitch-line green */
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, var(--tv-blue), var(--gold)) !important;
+}
+.stProgress > div > div {
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* ================================
+        DATAFRAMES & TABLES — stats sheet
+================================ */
+[data-testid="stDataFrame"] {
+    border-radius: 8px !important;
+    border: 1px solid #263d2f !important;
+    overflow: hidden;
+    background: rgba(9, 15, 11, 0.7) !important;
+}
+
+/* ================================
+        ALERTS / INFO CALLOUTS
+================================ */
+.stAlert {
+    border-radius: 8px !important;
+    border-left: 3px solid var(--tv-blue) !important;
+    background: rgba(14, 23, 18, 0.85) !important;
+    color: var(--chalk) !important;
+}
+
+/* ================================
+        DIVIDERS — halfway line
+================================ */
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
+    margin: 2.5rem 0;
+}
+
+/* ================================
+        SCROLLBARS
+================================ */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--pitch-black);
+}
+::-webkit-scrollbar-thumb {
+    background: #2a4133;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+/* ===================================================================
+   MATCHVISION CUSTOM CALLOUT BANNER (Alternative to st.info)
+=================================================================== */
+.match-info-callout {
+    background: var(--card-bg) !important;
+    border-left: 4px solid var(--tv-blue) !important;
+    border-top: 1px solid var(--border-soft) !important;
+    border-right: 1px solid var(--border-soft) !important;
+    border-bottom: 1px solid var(--border-soft) !important;
+    border-radius: 8px;
+    
+    padding: 14px 20px;
+    margin: 16px 0 24px 0;
+    
+    /* Make the width wrap tight to your text content length instead of stretching full width */
+    display: inline-block; 
+    max-width: 85%; /* Prevent long items from running awkwardly wide on ultra-wide screens */
+    
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+}
+
+.match-info-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.match-info-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--chalk);
+    line-height: 1.5;
+}
+
+/* ===================================================================
+   MATCHVISION DATA SOURCE BADGE (Kaggle Attribution Card)
+=================================================================== */
+.data-source-badge {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: 6px;
+    padding: 10px 18px;
+    margin: 12px 0 20px 0;
+    
+    /* Wraps beautifully to content text length */
+    display: inline-block;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease-in-out;
+}
+
+.data-source-badge:hover {
+    border-color: rgba(224, 178, 58, 0.6) !important;
+    box-shadow: 0 6px 20px rgba(224, 178, 58, 0.15);
+    transform: translateY(-1px);
+}
+
+.data-source-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--chalk);
+}
+
+/* Custom properties ensuring the link inherits matchday colors beautifully */
+.data-source-content a {
+    color: var(--gold-bright) !important;
+    font-weight: 500;
+    text-decoration: none !important;
+    border-bottom: 1px dashed rgba(255, 215, 94, 0.4);
+    transition: border-color 0.2s ease;
+}
+
+.data-source-content a:hover {
+    color: var(--gold) !important;
+    border-bottom-style: solid;
+    border-color: var(--gold) !important;
+}
