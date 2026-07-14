@@ -524,17 +524,21 @@ Special thanks to:
 
 ---
 
-# Developer
+# Developers
+
+**Sawmik Pal**
+
+**Sarthak Mukherjee**
 
 **Sayar Sekhar Ghosh**
 
-Computer Science Engineering Student
+**Pramiti Ghosh**
 
-GitHub: https://github.com/SAYAR123
+**Soumik Mandal**
 
-## Co-Developer
+(Computer Science Engineering Students)
 
-**Antara Pal**
+Githubs: Below(Contact/ Developer Profiles)
 
 ---
 
@@ -591,6 +595,8 @@ For suggestions, collaborations, or feedback, feel free to connect through GitHu
 **Repository:** https://github.com/SAYAR123/EPL_Prediction
 
 **Developer Profiles:**
+
+Sawmik Pal, Sarthak Mukherjee, Sayar Sekhar Ghosh, Pramiti Ghosh, Soumik Mandal
 
 - https://github.com/SawmikPal
 - https://github.com/GoldenHeart2000
